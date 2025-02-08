@@ -53,17 +53,22 @@ public class ConfigManager {
         Bukkit.removeRecipe(new NamespacedKey(plugin, "craft_debug_stick"));
 
         if (config.getBoolean("Debug_stick_craft.enabled")) {
+            int craft_size = config.getInt("Debug_stick_craft.grid_size");
+            if (craft_size < 1 || craft_size > 3) {
+                plugin.getLogger().severe("Error in config, value \"Debug_stick_craft -> grid_size\" not in range 1-3");
+                return false;
+            }
 
-            String[] craftShape = new String[3];
+            String[] craftShape = new String[craft_size];
 
-            for (int i = 0; i < 3; i++) {
+            for (int i = 0; i < craft_size; i++) {
                 String line = config.getString("Debug_stick_craft.shape.line"+(i+1));
                 if (line == null){
                     plugin.getLogger().severe("Error in config, line \"Debug_stick_craft -> shape -> line" + (i+1) + "\" not found");
                     return false;
                 }
-                if (line.length()!=3) {
-                    plugin.getLogger().severe("Error in config, line length \"Debug_stick_craft -> shape -> line" + (i+1) + "\" not equal to 3 characters");
+                if (line.length()!=craft_size) {
+                    plugin.getLogger().severe("Error in config, line length \"Debug_stick_craft -> shape -> line" + (i+1) + "\" not equal to " + craft_size +" characters");
                     return false;
                 }
                 craftShape[i] = line;
@@ -99,7 +104,7 @@ public class ConfigManager {
                 ingredientList.put(key.charAt(0), Material.getMaterial(value.toUpperCase()));
             }
 
-            CreateCraft.addRecipeDebugStick(plugin, craftShape, ingredientList);
+            CreateCraft.addRecipeDebugStick(plugin, craftShape, ingredientList, craft_size);
         }
         return true;
     }

@@ -1,7 +1,7 @@
 name: DebugStick
 version: '1.0'
 main: org.ferrum.debugStick.DebugStick
-api-version: '1.18'
+api-version: '1.16'
 load: STARTUP
 authors: [ Egor_ ]
 

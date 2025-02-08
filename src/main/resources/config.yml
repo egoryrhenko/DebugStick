@@ -24,30 +24,37 @@ Prevent_water_in_world:
 # Конфиг рецепта палочки отладки
 Debug_stick_craft:
   enabled: true
+
+  # if grid is 2x2, line3 is ignored and the line length is 2 characters
+  # если сетка 2x2, строка 3 игнорируется и длина строки составляет 2 символа
+  grid_size: 2 # 3x3 => 3, 2x2 => 2, 1x1 => 1
   shape:
-    line1: "  N"  # craft grid 3 x 3 | сетка крафта 3 x 3
-    line2: " S "  # use space for empty slot
-    line3: "   "  # использовать space для пустого слота
-  ingredient: # ingredient key for craft grid | ключ ингредиента для сетки крафта
+    line1: " N"  # craft grid | сетка крафта
+    line2: "S "  # use space for empty slot
+    line3: "   " # использовать space для пустого слота
+
+  # ingredient key for craft grid
+  # ключ ингредиента для сетки крафта
+  ingredient:
     N: "NETHER_STAR"
     S: "STICK"
 
 # List of blocks that the player will not be able to interact with
 # Список блоков, с которыми игрок не сможет взаимодействовать
 Blacklist_block:
-  - BEE_NEST
-  - BEEHIVE
-  - CAKE
+  - bee_nest
+  - beehive
+  - cake
   - composter
   - respawn_anchor
   - end_portal_frame
   - turtle_egg
   - trial_spawner
-  - VAULT
-  - SCULK_SHRIEKER
-  - SEA_PICKLE
-  - GRASS_BLOCK
-  - WATER_CAULDRON
+  - vault
+  - sculk_shrieker
+  - sea_pickle
+  - grass_block
+  - water_cauldron
 
 # List of block tags that the player will not be able to interact with
 # Список тегов блоков, с которыми игрок не сможет взаимодействовать
