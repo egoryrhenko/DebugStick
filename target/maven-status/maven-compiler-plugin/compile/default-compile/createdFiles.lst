@@ -1,0 +1,5 @@
+org\ferrum\debugStick\utils\CreateCraft.class
+org\ferrum\debugStick\listeners\DebugStickListener.class
+org\ferrum\debugStick\utils\ConfigManager.class
+org\ferrum\debugStick\DebugStick.class
+org\ferrum\debugStick\commands\ReloadCommand.class

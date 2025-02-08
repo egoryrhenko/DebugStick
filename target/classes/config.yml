@@ -1,0 +1,62 @@
+
+# DebugStick plugin config
+
+
+# Disables checking for players in creative
+# Отключает проверку игроков в креативе
+Bypass_In_Creative: false
+
+# Message when a player tries to interact with a block or state on the blacklist
+# Сообщение когда игрок пытается взаимодействовать с блоком или состоянием блока из черного списка
+Interaction_cancellation_messages:
+  enable: true
+  actionbar: true
+  messageBlock: "You cannot interact with this block"
+  messageState: "You cannot interact with this state"
+
+# List of worlds where the player cannot create water using the debug stick
+# Список миров, в которых игрок не может создать воду с помощью палочки отладки
+Prevent_water_in_world:
+  - "world_nether"
+ #- "custom_world_name"
+
+# Debug stick recipe config
+# Конфиг рецепта палочки отладки
+Debug_stick_craft:
+  enabled: true
+  shape:
+    line1: "  N"  # craft grid 3 x 3 | сетка крафта 3 x 3
+    line2: " S "  # use space for empty slot
+    line3: "   "  # использовать space для пустого слота
+  ingredient: # ingredient key for craft grid | ключ ингредиента для сетки крафта
+    N: "NETHER_STAR"
+    S: "STICK"
+
+# List of blocks that the player will not be able to interact with
+# Список блоков, с которыми игрок не сможет взаимодействовать
+Blacklist_block:
+  - BEE_NEST
+  - BEEHIVE
+  - CAKE
+  - composter
+  - respawn_anchor
+  - end_portal_frame
+  - turtle_egg
+  - trial_spawner
+  - VAULT
+  - SCULK_SHRIEKER
+  - SEA_PICKLE
+  - GRASS_BLOCK
+  - WATER_CAULDRON
+
+# List of block tags that the player will not be able to interact with
+# Список тегов блоков, с которыми игрок не сможет взаимодействовать
+Blacklist_tag_block:
+  - candles
+  - crops
+  - doors
+  - slabs
+  - tall_flowers
+
+
+
