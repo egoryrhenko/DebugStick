@@ -1,0 +1,19 @@
+name: DebugStick
+version: '1.0'
+main: org.ferrum.debugStick.DebugStick
+api-version: '1.16'
+load: STARTUP
+authors: [ Egor_ ]
+
+commands:
+  debugstick:
+    description: reload config
+    usage: use /debugstick reload
+
+permissions:
+  debugstick.bypass:
+    default: false
+    description: Bypassing plugin check
+  debugstick.reload:
+    default: op
+    description: Permission to reload the plugin
